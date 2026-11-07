@@ -1,0 +1,17 @@
+name = "chats-guide-italian-api"
+main = "worker.js"
+compatibility_date = "2026-08-01"
+
+# Replace "YOUR_KV_NAMESPACE_ID" after creating a Workers KV namespace.
+[[kv_namespaces]]
+binding = "ITALIAN_DATA"
+id = "YOUR_KV_NAMESPACE_ID"
+
+[vars]
+ALLOWED_ORIGIN = "https://ltwoolford89.github.io"
+AI_MODEL = "gpt-4.1-mini"
+# To enable push, add VAPID_PUBLIC_KEY and VAPID_SUBJECT as variables,
+# and VAPID_PRIVATE_JWK as a secret. Never commit the private JWK.
+
+[triggers]
+crons = ["0 * * * *"]
