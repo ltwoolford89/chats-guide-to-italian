@@ -132,6 +132,16 @@ const WRITING_PRACTICE = [
  {unit:3,en:'I would like a coffee, please.',it:'Vorrei un caffè, per favore.',accept:['vorrei un caffe per favore']}
 ];
 
+
+// Extend existing writing and fill-in practice with each newly unlocked lesson.
+FILL_PRACTICE.push(...ADV_LESSONS.map(l=>({
+ unit:l.unit,before:l.fill.before,after:l.fill.after,answer:l.fill.answer,
+ translation:l.fill.en,hint:l.fill.hint
+})));
+WRITING_PRACTICE.push(...ADV_LESSONS.map(l=>({
+ unit:l.unit,en:l.grammar.en,it:l.grammar.example,accept:[l.grammar.example]
+})));
+
 // Keep the v1 storage key to preserve all previous learner progress.
 const STORE_KEY='chats-guide-italian-v1';
 const DEFAULT_QUICK=['learn','flashcards','speak','dictionary'];
